@@ -1,7 +1,11 @@
 def is_syllable_accented(syllable):
     """Function to determine if syllable is accentuated"""
     # accented_graphemes = [u'ŕ', u'á', u'ä', u'é', u'ë', u'ě', u'í', u'î', u'ó', u'ô', u'ö', u'ú', u'ü']
-    accented_graphemes = [u'ŕ', u'á', u'à', u'é', u'è', u'ê', u'í', u'ì', u'ó', u'ô', u'ò', u'ú', u'ù']
+    #accented_graphemes = [u'ŕ', u'á', u'à', u'é', u'è', u'ê', u'í', u'ì', u'ó', u'ô', u'ò', u'ú', u'ù']
+    accented_graphemes = ["á", "à", "Á", "À", "è", "é", "ê", "É", "È", "Ê",
+                "í",  "ì", "Ì", "Í", "ó", "ò", "ô",
+                "Ó", "Ò", "Ô", "ù", "ú", "Ù", "Ú",
+                "ŕ", "Ŕ"]
     for grapheme in syllable:
         if grapheme in accented_graphemes:
             return True
@@ -22,27 +26,30 @@ def is_vowel(list_of_characters_in_word, position, vowels):
 
 def get_vowel_graphemes():
     """Returns a list of vowel graphemes. This includes the accented 'r' grapheme."""
-    return ['à', 'á', 'é', 'è', 'ê', 'ì', 'í', 'î', 'ó', 'ô', 'ò', 'ú', 'a', 'e', 'i', 'o', 'u', 'ŕ']
+    return ['à', 'á', 'é', 'è', 'ê', 'ì', 'í', 'î', 'ó', 'ô', 'ò', 'ú', 'a', 'e', 'i', 'o', 'u', 'ŕ',
+            'Á', 'É', 'Í', 'Ó', 'Ú', 'Ŕ', 'À', 'È', 'Ì', 'Ò', 'Ù', 'Ê', 'Ô', 'A', 'E', 'I', 'O', 'U']
+
 
 
 def get_sonorant_graphemes():
     """Returns a list of sonorant graphemes. """
-    return ['m', 'n', 'v', 'l', 'r', 'j']
+    return ['m', 'n', 'v', 'l', 'r', 'j', 'M', 'N', 'V', 'L', 'R', 'J']
 
 
 def get_voiced_obstruent_graphemes():
     """Returns a list of voiced obstruent graphemes."""
-    return ['b', 'd', 'z', 'ž', 'g']
+    return ['b', 'd', 'z', 'ž', 'g', 'B', 'D', 'Z', 'Ž', 'G']
 
 
 def get_voiceless_obstruent_graphemes():
     """Returns a list of voiceless obstruent graphemes."""
-    return ['p', 't', 's', 'š', 'č', 'k', 'f', 'h', 'c', 'x']
+    return ['p', 't', 's', 'š', 'č', 'k', 'f', 'h', 'c', 'P', 'T', 'S', 'Š', 'Č', 'K', 'F', 'H', 'C']
 
 
 def get_consonant_graphemes():
     """Returns a list of all consonant graphemes."""
-    return ['m', 'n', 'v', 'l', 'r', 'j', 'b', 'd', 'z', 'ž', 'g', 'p', 't', 's', 'š', 'č', 'k', 'f', 'h', 'c']
+    return ['m', 'n', 'v', 'l', 'r', 'j', 'b', 'd', 'z', 'ž', 'g', 'p', 't', 's', 'š', 'č', 'k', 'f', 'h', 'c',
+            'M', 'N', 'V', 'L', 'R', 'J', 'B', 'D', 'Z', 'Ž', 'G', 'P', 'T', 'S', 'Š', 'Č', 'K', 'F', 'H', 'C']
 
 
 def split_consonant_graphemes_between_syllables(consonants):
